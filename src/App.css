@@ -1,0 +1,160 @@
+:root {
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --primary: #646cff;
+  --correct: #28a745;
+  --wrong: #dc3545;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* KÖTELEZŐ: Animált Progress Bar (Időzítő) */
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 1s linear; /* Folyamatos csúszás */
+}
+
+.timer {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.answers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Gombok alapstílusa */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-answer {
+  background-color: #f0f0f0;
+  border: 2px solid transparent;
+  text-align: left;
+}
+
+.btn-answer:hover:not(.disabled) {
+  background-color: #e2e2e2;
+}
+
+/* KÖTELEZŐ: Színkódolt válaszok */
+.btn-answer.correct {
+  background-color: var(--correct);
+  color: white;
+  border-color: var(--correct);
+}
+
+.btn-answer.wrong {
+  background-color: var(--wrong);
+  color: white;
+  border-color: var(--wrong);
+}
+
+.btn-answer.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  width: 100%;
+  margin-top: 10px;
+}
+
+input, select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.leaderboard-list li {
+  background: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* KÖTELEZŐ: Animált átmenetek */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
